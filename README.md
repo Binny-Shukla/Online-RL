@@ -1,64 +1,59 @@
-# **Online Reinforcement Learning 🧠⚡**
 
-This repository is dedicated to Online Reinforcement Learning algorithms, implemented from scratch in PyTorch.
+https://github.com/user-attachments/assets/486ef54b-33f1-46f8-ab11-f61b35857d6f
+# **Proximal Policy Optimization (PPO)**
 
-It serves as the third pillar in our RL research ecosystem:
+### **Overview**
 
-  Offline RL → https://github.com/Binny-Shukla/OFFLINE-RL
-  
-  Meta-RL → https://github.com/Binny-Shukla/META-RL
-  
-  Online RL → you are here 🚀
+This repository contains a from-scratch implementation of Proximal Policy Optimization (PPO) in PyTorch, tested on the challenging Ant-v5 environment from Gymnasium.
 
-Our goal is to provide clear, reproducible implementations of foundational online RL algorithms, tested on challenging environments like MuJoCo (Ant, Humanoid, Hopper, etc.).
+PPO is one of the most popular on-policy reinforcement learning algorithms — striking a balance between stability and performance. Unlike vanilla policy gradients that can collapse due to large updates, PPO introduces a clipped surrogate objective that ensures safe, controlled learning steps while still improving efficiency.
 
-## **✅ Implemented Algorithms**
+## **Why PPO is Powerful ?**
 
-    ✅ Proximal Policy Optimization (PPO)
+    🚦 Stable Training: Uses clipped updates to prevent policy from diverging.
     
-    From-scratch PyTorch implementation
+    ⚡ Sample Efficiency: Reuses on-policy data effectively without the instability of TRPO.
     
-    Tested on Ant-v5 (video available)
+    🧠 General-Purpose: Performs well across continuous control (Ant, Humanoid, Walker2d) and discrete domains (Atari).
     
-    Training curves & benchmarks coming soon
+    🏋️ Proven Scalability: Deployed in robotics, game-playing, and simulated control tasks at scale.
 
-## **📌 Upcoming Algorithms**
+### **Results**
 
-    ⬜ Soft Actor-Critic (SAC)
+This implementation has been successfully tested on Ant-v5, where the agent learns to walk and survive in a complex continuous-control environment.
+
+📹 Example training video (Ant-v5): Uploading Untitled video - Made with Clipchamp (7).mp4…
+
+#### **Performance milestone:**
+
+✅ Ant-v5 agent reached 812 episodic reward at episode 155 from scratch.
+
+### **Core Idea Behind PPO**
+
+At its heart, PPO tries to maximize the expected reward while keeping new policies close to the old ones.
+
+This means updates never push the new policy too far away from the old one, making learning both fast and safe.
+
+## **Use Cases**
+
+PPO is widely used across domains where continuous and discrete action control is required:
+
+    🤖 Robotics: Training robots to walk, grasp, and manipulate objects.
     
-    ⬜ Twin Delayed DDPG (TD3)
+    🎮 Games: Agents mastering environments like Atari, MuJoCo, and Unity.
     
-    ⬜ Trust Region Policy Optimization (TRPO)
+    🌍 Simulation & Research: Benchmarking RL algorithms on control tasks.
+    
+    🚀 Real-World Applications: Self-driving policies, recommendation systems, and adaptive decision-making.
 
-## **📂 Repository Structure**
+### **Repository Structure**
 
-  online-rl/
-  
-  │── main/               # Central branch with project overview
-  
-  │── ppo/                # PPO implementation branch
-  
-  │── sac/                # (planned) SAC implementation branch
-  
-  │── td3/                # (planned) TD3 implementation branch
-  
-  │── trpo/               # (planned) TRPO implementation branch
-  
-  │
-  └── README.md           # This file
-  
+    ppo_ant.ipynb → Jupyter Notebook with PPO implementation tested on Ant-v5.
+    
+    plot.py → Script for visualizing training curves (losses, rewards).
+    
+    videos/ → Training rollout videos for inspection & sharing.
 
+#### **License**
 
-Each algorithm lives in its own branch, with Jupyter notebooks, training videos, and logs.
-
-## **🎯 Vision**
-
-The repo will evolve into a comprehensive online RL playground, where algorithms are:
-
-🔹 Implemented from scratch (no black-box libraries)
-
-🔹 Tested on continuous control tasks
-
-🔹 Documented with videos, curves, and notes
-
-Ultimately, this will stand as a companion to our Offline RL and Meta-RL repos, completing the RL Trinity.
+This project is licensed under the MIT License.
